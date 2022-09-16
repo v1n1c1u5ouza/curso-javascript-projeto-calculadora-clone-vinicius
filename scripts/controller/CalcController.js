@@ -83,13 +83,27 @@ class CalcController {
 
         this._operation = [result, last];
 
-        console.log(result);
+        this.setLastNumberToDisplay();
 
     }
 
     setLastNumberToDisplay(){
 
+        let lastNumber;
 
+        for (let i = this._operation.length-1; i >= 0; i--){
+
+            if (!this.isOperator(this._operation[i])) {
+
+                lastNumber = this._operation[i];
+
+                break;
+
+            }
+
+        }
+
+        this.displayCalc = lastNumber
 
     }
 
@@ -108,6 +122,8 @@ class CalcController {
             } else {
 
                 this._operation.push(value);
+
+                this.setLastNumberToDisplay();
 
             }
 
