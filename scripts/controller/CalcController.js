@@ -83,8 +83,6 @@ class CalcController {
 
         this._operation = [result, last];
 
-        console.log(result);
-
     }
 
     setLastNumberToDisplay(){
