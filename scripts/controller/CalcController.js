@@ -40,6 +40,8 @@ class CalcController {
     clearAll(){
 
         this._operation = [];
+        this.lastNumber= '';
+        this._lastOperator= '';
 
         this.setLastNumberToDisplay();
     
@@ -103,14 +105,13 @@ class CalcController {
 
         }
 
-
-        if (this._operation.length > 3) {
+        if(this._operation.length > 3) {
 
             last = this._operation.pop();
 
-            this._lastNumber = this.getResult();
+            this.lastNumber = this.getResult();
 
-        } else if (this._operation.length == 3) {
+        } else if (this._operation.length == 3){
 
             this._lastNumber = this.getLastItem(false);
 
